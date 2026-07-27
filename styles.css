@@ -1,0 +1,352 @@
+/* =========================================
+   RESET / BASE
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* =========================================
+   NAVBAR
+   ========================================= */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav .left a {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+}
+
+nav .right {
+  display: flex;
+  gap: 20px;
+}
+
+nav .right a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #555;
+  transition: color 0.2s ease;
+}
+
+nav .right a:hover {
+  color: #000;
+}
+
+nav .right a i {
+  font-size: 18px;
+}
+
+/* =========================================
+   MAIN LAYOUT
+   ========================================= */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+section {
+  margin-bottom: 100px;
+}
+
+section h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #222;
+}
+
+/* =========================================
+   HERO SECTION
+   ========================================= */
+.hero-section {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  padding: 60px 0;
+}
+
+.hero-section .text {
+  flex: 1;
+}
+
+.hero-section .text h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.hero-section .text p {
+  color: #555;
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+.hero-section .links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.hero-section .links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  color: #333;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-section .links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.hero-section .headshot {
+  flex: 0 0 300px;
+}
+
+.hero-section .headshot img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
+   SKILLS SECTION
+   ========================================= */
+.skills-section .text {
+  color: #555;
+  max-width: 800px;
+  margin-bottom: 40px;
+}
+
+.skills-section .cells {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.skills-section .cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 25px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.skills-section .cell:hover {
+  transform: translateY(-3px);
+}
+
+.skills-section .cell img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.skills-section .cell span {
+  font-weight: 600;
+  color: #333;
+}
+
+/* =========================================
+   TESTIMONY SECTION
+   ========================================= */
+.testimony-section .group {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.testimony-section .person-details {
+  flex: 0 0 200px;
+  text-align: center;
+}
+
+.testimony-section .person-details img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 15px;
+  border: 3px solid #f0f0f0;
+}
+
+.testimony-section .person-details p:first-of-type {
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.testimony-section .person-details p:last-of-type {
+  color: #777;
+  font-size: 14px;
+}
+
+.testimony-section .text {
+  flex: 1;
+  color: #555;
+  font-style: italic;
+  line-height: 1.8;
+}
+
+/* =========================================
+   CONTACT SECTION
+   ========================================= */
+.contact-section .group {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.contact-section .text {
+  flex: 1;
+  color: #555;
+}
+
+.contact-section form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.contact-section label {
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.contact-section input,
+.contact-section textarea {
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+  border-color: #333;
+}
+
+.contact-section textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-section button {
+  padding: 12px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 8px;
+}
+
+.contact-section button:hover {
+  background-color: #000;
+}
+
+/* =========================================
+   RESPONSIVE (mobile / tablet)
+   ========================================= */
+@media (max-width: 800px) {
+  nav {
+    padding: 15px 20px;
+  }
+
+  nav .right span {
+    display: none; /* on mobile we show only the icons */
+  }
+
+  .hero-section {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .hero-section .headshot {
+    flex: 0 0 auto;
+    width: 200px;
+  }
+
+  .hero-section .links {
+    justify-content: center;
+  }
+
+  .testimony-section .group,
+  .contact-section .group {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .testimony-section .person-details {
+    flex: 0 0 auto;
+  }
+
+  section h2 {
+    font-size: 26px;
+  }
+
+  .hero-section .text h2 {
+    font-size: 32px;
+  }
+}
