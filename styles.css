@@ -1,18 +1,30 @@
 /* =========================================================
+   CUSTOM PROPERTIES (animatable)
+   Registers --border-angle as an angle so we can animate it
+   inside conic-gradient. Without @property, the browser treats
+   custom props as plain strings and won't interpolate them.
+   ========================================================= */
+@property --border-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* =========================================================
    DESIGN TOKENS
    Change these to iterate on the whole vibe.
    ========================================================= */
 :root {
   /* palette */
-  --bg-0: #0a0908;
-  --bg-1: #14120e;
-  --bg-2: #1e1b15;
+  --bg-0: #08080d;
+  --bg-1: #12121a;
+  --bg-2: #1c1c26;
   --border: rgba(255, 255, 255, 0.08);
   --text-0: #f2f2f5;
   --text-1: #a8a8b3;
   --text-2: #6d6d78;
-  --accent: #e6b422;
-  --accent-soft: rgba(230, 180, 34, 0.15);
+  --accent: #ff1744;
+  --accent-soft: rgba(255, 23, 68, 0.15);
 
   /* type */
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
@@ -84,7 +96,7 @@ button {
   align-items: center;
   justify-content: space-between;
   padding: 20px 40px;
-  background: rgba(10, 9, 8, 0.6);
+  background: rgba(8, 8, 13, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
@@ -203,7 +215,7 @@ button {
 .nav-socials a:hover::before {
   transform: scale(1);
   opacity: 1;
-  border-color: rgba(230, 180, 34, 0.3);
+  border-color: rgba(255, 23, 68, 0.3);
 }
 
 /* =========================================================
@@ -238,8 +250,8 @@ button {
   background:
     radial-gradient(
       ellipse at center,
-      rgba(10, 9, 8, 0.4) 0%,
-      rgba(10, 9, 8, 0.85) 70%,
+      rgba(8, 8, 13, 0.4) 0%,
+      rgba(8, 8, 13, 0.85) 70%,
       var(--bg-0) 100%
     );
 }
@@ -332,11 +344,11 @@ button {
 }
 
 .btn-primary:hover {
-  background-color: #f5cd52;
+  background-color: #ff5273;
   background-position: 150% 0;
   transform: translateY(-2px);
   box-shadow: 0 12px 28px -8px var(--accent),
-    0 0 0 3px rgba(230, 180, 34, 0.15);
+    0 0 0 3px rgba(255, 23, 68, 0.15);
 }
 
 .btn-primary:active {
@@ -399,7 +411,7 @@ button {
 }
 
 .featured-project:hover {
-  border-color: rgba(230, 180, 34, 0.3);
+  border-color: rgba(255, 23, 68, 0.3);
 }
 
 .featured-media {
@@ -492,15 +504,57 @@ button {
   cursor: pointer;
   font: inherit;
   width: 100%;
+  position: relative;
+  isolation: isolate;
   transition: transform 0.35s var(--ease), border-color 0.35s var(--ease),
     box-shadow 0.35s var(--ease);
 }
 
+/* --- Traveling neon outline on hover ---
+   Uses conic-gradient rotated via --border-angle, then masks out
+   everything except a 2px "ring" so it looks like a stroke
+   traveling around the card border. */
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(
+    from var(--border-angle),
+    transparent 0deg,
+    transparent 260deg,
+    var(--accent) 310deg,
+    #ff8ba0 330deg,
+    var(--accent) 350deg,
+    transparent 360deg
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+  pointer-events: none;
+  z-index: 2;
+}
+
 .project-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(230, 180, 34, 0.3);
+  border-color: rgba(255, 23, 68, 0.3);
   box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.7),
-    0 0 0 1px rgba(230, 180, 34, 0.15);
+    0 0 24px -4px rgba(255, 23, 68, 0.2);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+  animation: card-outline 2.5s linear infinite;
+}
+
+@keyframes card-outline {
+  to {
+    --border-angle: 360deg;
+  }
 }
 
 .project-thumb {
@@ -794,11 +848,11 @@ button {
 }
 
 .resume-btn:hover {
-  background-color: #f5cd52;
+  background-color: #ff5273;
   background-position: 150% 0;
   transform: translateY(-2px);
   box-shadow: 0 12px 28px -8px var(--accent),
-    0 0 0 3px rgba(230, 180, 34, 0.15);
+    0 0 0 3px rgba(255, 23, 68, 0.15);
 }
 
 .resume-btn:hover i {
@@ -871,7 +925,7 @@ button {
   display: flex;
   flex-direction: column;
   box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(230, 180, 34, 0.1);
+    0 0 0 1px rgba(255, 23, 68, 0.1);
   animation: modalPop 0.35s var(--ease);
 }
 
@@ -894,7 +948,7 @@ button {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(10, 9, 8, 0.6);
+  background: rgba(8, 8, 13, 0.6);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--border);
