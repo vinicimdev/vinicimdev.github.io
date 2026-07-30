@@ -4,15 +4,15 @@
    ========================================================= */
 :root {
   /* palette */
-  --bg-0: #0a0a0f;
-  --bg-1: #12121a;
-  --bg-2: #1a1a24;
+  --bg-0: #0a0908;
+  --bg-1: #14120e;
+  --bg-2: #1e1b15;
   --border: rgba(255, 255, 255, 0.08);
   --text-0: #f2f2f5;
   --text-1: #a8a8b3;
   --text-2: #6d6d78;
-  --accent: #ff6a3d;
-  --accent-soft: rgba(255, 106, 61, 0.15);
+  --accent: #e6b422;
+  --accent-soft: rgba(230, 180, 34, 0.15);
 
   /* type */
   --font-sans: "Inter", system-ui, -apple-system, sans-serif;
@@ -84,7 +84,7 @@ button {
   align-items: center;
   justify-content: space-between;
   padding: 20px 40px;
-  background: rgba(10, 10, 15, 0.6);
+  background: rgba(10, 9, 8, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
@@ -203,7 +203,7 @@ button {
 .nav-socials a:hover::before {
   transform: scale(1);
   opacity: 1;
-  border-color: rgba(255, 106, 61, 0.3);
+  border-color: rgba(230, 180, 34, 0.3);
 }
 
 /* =========================================================
@@ -238,8 +238,8 @@ button {
   background:
     radial-gradient(
       ellipse at center,
-      rgba(10, 10, 15, 0.4) 0%,
-      rgba(10, 10, 15, 0.85) 70%,
+      rgba(10, 9, 8, 0.4) 0%,
+      rgba(10, 9, 8, 0.85) 70%,
       var(--bg-0) 100%
     );
 }
@@ -315,13 +315,32 @@ button {
 }
 
 .btn-primary {
-  background: var(--accent);
+  background-color: var(--accent);
+  background-image: linear-gradient(
+    115deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 60%
+  );
+  background-size: 250% 100%;
+  background-position: -50% 0;
+  background-repeat: no-repeat;
   color: var(--bg-0);
+  transition: background-position 0.6s var(--ease),
+    background-color 0.3s var(--ease), transform 0.3s var(--ease),
+    box-shadow 0.3s var(--ease);
 }
 
 .btn-primary:hover {
+  background-color: #f5cd52;
+  background-position: 150% 0;
   transform: translateY(-2px);
-  background: #ff8560;
+  box-shadow: 0 12px 28px -8px var(--accent),
+    0 0 0 3px rgba(230, 180, 34, 0.15);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
 }
 
 .btn-ghost {
@@ -380,7 +399,7 @@ button {
 }
 
 .featured-project:hover {
-  border-color: rgba(255, 106, 61, 0.3);
+  border-color: rgba(230, 180, 34, 0.3);
 }
 
 .featured-media {
@@ -452,11 +471,11 @@ button {
 }
 
 /* =========================================================
-   PROJECT GRID (small cards)
+   PROJECT GRID
    ========================================================= */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
 }
 
@@ -473,19 +492,20 @@ button {
   cursor: pointer;
   font: inherit;
   width: 100%;
-  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease),
-    box-shadow 0.3s var(--ease);
+  transition: transform 0.35s var(--ease), border-color 0.35s var(--ease),
+    box-shadow 0.35s var(--ease);
 }
 
 .project-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(255, 106, 61, 0.3);
-  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(255, 106, 61, 0.15);
+  border-color: rgba(230, 180, 34, 0.3);
+  box-shadow: 0 24px 48px -24px rgba(0, 0, 0, 0.7),
+    0 0 0 1px rgba(230, 180, 34, 0.15);
 }
 
 .project-thumb {
-  aspect-ratio: 16 / 10;
+  position: relative;
+  aspect-ratio: 4 / 3;
   background: linear-gradient(135deg, var(--bg-2), var(--bg-1));
   overflow: hidden;
 }
@@ -494,32 +514,70 @@ button {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s var(--ease);
+  transition: transform 0.6s var(--ease);
 }
 
 .project-card:hover .project-thumb img {
-  transform: scale(1.06);
+  transform: scale(1.08);
 }
 
+/* --- Arrow icon: appears from top-right on hover --- */
+.project-arrow {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--bg-0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  opacity: 0;
+  transform: translate(8px, -8px) scale(0.8);
+  transition: opacity 0.3s var(--ease), transform 0.35s var(--ease);
+  box-shadow: 0 8px 20px -6px var(--accent);
+  pointer-events: none;
+}
+
+.project-card:hover .project-arrow {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+.project-card:hover .project-arrow i {
+  animation: arrowNudge 0.6s var(--ease) 0.15s;
+}
+
+@keyframes arrowNudge {
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
+
+/* --- Card body --- */
 .project-body {
-  padding: 20px;
+  padding: 22px 22px 24px;
 }
 
 .project-name {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 4px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+  color: var(--text-0);
+  transition: color 0.3s var(--ease);
 }
 
-.project-role {
-  font-size: 12px;
+.project-card:hover .project-name {
+  color: var(--accent);
+}
+
+.project-meta {
+  font-size: 13px;
   color: var(--text-2);
-  margin-bottom: 12px;
-}
-
-.project-desc {
-  font-size: 14px;
-  color: var(--text-1);
   margin-bottom: 16px;
 }
 
@@ -704,48 +762,31 @@ button {
 
 /* =========================================================
    RESUME BUTTON (nav + contact)
-   Shared class, size modifiers for context.
+   Shares the shine + glow visual language with .btn-primary.
    ========================================================= */
 .resume-btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
   border-radius: 999px;
-  background: var(--accent);
+  background-color: var(--accent);
+  background-image: linear-gradient(
+    115deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.35) 50%,
+    transparent 60%
+  );
+  background-size: 250% 100%;
+  background-position: -50% 0;
+  background-repeat: no-repeat;
   color: var(--bg-0);
   font-weight: 600;
   text-decoration: none;
-  position: relative;
-  overflow: hidden;
   cursor: pointer;
   border: none;
-  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease),
-    background 0.3s var(--ease);
-}
-
-/* Sliding shine that sweeps across on hover */
-.resume-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -60%;
-  width: 55%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.4),
-    transparent
-  );
-  transform: skewX(-20deg);
-  transition: left 0.6s var(--ease);
-  pointer-events: none;
-}
-
-.resume-btn i,
-.resume-btn span {
-  position: relative;
-  z-index: 1;
+  transition: background-position 0.6s var(--ease),
+    background-color 0.3s var(--ease), transform 0.3s var(--ease),
+    box-shadow 0.3s var(--ease);
 }
 
 .resume-btn i {
@@ -753,14 +794,11 @@ button {
 }
 
 .resume-btn:hover {
+  background-color: #f5cd52;
+  background-position: 150% 0;
   transform: translateY(-2px);
-  background: #ff8560;
   box-shadow: 0 12px 28px -8px var(--accent),
-    0 0 0 3px rgba(255, 106, 61, 0.15);
-}
-
-.resume-btn:hover::before {
-  left: 130%;
+    0 0 0 3px rgba(230, 180, 34, 0.15);
 }
 
 .resume-btn:hover i {
@@ -833,7 +871,7 @@ button {
   display: flex;
   flex-direction: column;
   box-shadow: 0 30px 80px -20px rgba(0, 0, 0, 0.6),
-    0 0 0 1px rgba(255, 106, 61, 0.1);
+    0 0 0 1px rgba(230, 180, 34, 0.1);
   animation: modalPop 0.35s var(--ease);
 }
 
@@ -856,7 +894,7 @@ button {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(10, 10, 15, 0.6);
+  background: rgba(10, 9, 8, 0.6);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--border);
@@ -942,6 +980,10 @@ button {
   color: var(--text-1);
   font-size: 15px;
   line-height: 1.7;
+}
+
+.cs-section p + p {
+  margin-top: 14px;
 }
 
 .cs-tags {
