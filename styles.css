@@ -678,6 +678,196 @@ button {
 }
 
 /* =========================================================
+   EXPERIENCE TIMELINE (NEW)
+   Central vertical line with alternating cards on each side.
+   Mobile collapses to a single left-aligned column.
+   ========================================================= */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Central vertical line with faded ends. */
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--border) 8%,
+    var(--border) 92%,
+    transparent 100%
+  );
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  position: relative;
+  width: 50%;
+  padding: 20px 40px;
+  margin-bottom: 20px;
+}
+
+.timeline-item--left {
+  left: 0;
+  padding-right: 60px;
+  text-align: right;
+}
+
+.timeline-item--right {
+  left: 50%;
+  padding-left: 60px;
+  text-align: left;
+}
+
+/* Glowing dot marking the moment on the central line. */
+.timeline-dot {
+  position: absolute;
+  top: 32px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--bg-0), 0 0 16px var(--accent);
+  z-index: 2;
+}
+
+.timeline-item--left .timeline-dot {
+  right: -8px;
+}
+
+.timeline-item--right .timeline-dot {
+  left: -8px;
+}
+
+.timeline-card {
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  position: relative;
+  transition: transform 0.35s var(--ease),
+    border-color 0.35s var(--ease),
+    box-shadow 0.35s var(--ease);
+}
+
+.timeline-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 23, 68, 0.3);
+  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.7),
+    0 0 20px -4px rgba(255, 23, 68, 0.15);
+}
+
+/* Little arrow pointing from the card toward the center line. */
+.timeline-card::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  width: 12px;
+  height: 12px;
+  background: var(--bg-1);
+  border-top: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  transition: border-color 0.35s var(--ease);
+}
+
+.timeline-item--left .timeline-card::before {
+  right: -7px;
+  transform: rotate(45deg);
+}
+
+.timeline-item--right .timeline-card::before {
+  left: -7px;
+  transform: rotate(-135deg);
+}
+
+.timeline-item:hover .timeline-card::before {
+  border-color: rgba(255, 23, 68, 0.3);
+}
+
+.timeline-date {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.timeline-role {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-0);
+  margin-bottom: 4px;
+}
+
+.timeline-company {
+  font-size: 15px;
+  color: var(--text-1);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.timeline-desc {
+  font-size: 14px;
+  color: var(--text-1);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* Tag alignment respects the card's text alignment. */
+.timeline-item--left .tag-list {
+  justify-content: flex-end;
+}
+
+.timeline-item--right .tag-list {
+  justify-content: flex-start;
+}
+
+/* --- Mobile: everything to a single left column --- */
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 20px;
+    transform: none;
+  }
+
+  .timeline-item,
+  .timeline-item--left,
+  .timeline-item--right {
+    width: 100%;
+    left: 0;
+    padding-left: 60px;
+    padding-right: 20px;
+    text-align: left;
+  }
+
+  .timeline-item--left .timeline-dot,
+  .timeline-item--right .timeline-dot {
+    left: 12px;
+    right: auto;
+  }
+
+  .timeline-item--left .timeline-card::before,
+  .timeline-item--right .timeline-card::before {
+    left: -7px;
+    right: auto;
+    transform: rotate(-135deg);
+  }
+
+  .timeline-item--left .tag-list,
+  .timeline-item--right .tag-list {
+    justify-content: flex-start;
+  }
+}
+
+/* =========================================================
    CONTACT
    ========================================================= */
 .contact-content {

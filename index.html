@@ -1,555 +1,562 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vinicius Januzzi - Portfolio</title>
 
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vinicius Januzzi - Portfolio</title>
 
-    <!-- icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <link rel="stylesheet" href="styles.css" />
-  </head>
+  <!-- icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <body>
-    <!-- ===========================================================
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- ===========================================================
          NAVBAR (fixed, overlays the hero)
          =========================================================== -->
-    <nav class="nav">
-      <a href="#home" class="nav-logo">Vinicius Januzzi</a>
+  <nav class="nav">
+    <a href="#home" class="nav-logo">Vinicius Januzzi</a>
 
-      <ul class="nav-links">
-        <li><a href="#home">home</a></li>
-        <li><a href="#projects">projects</a></li>
-        <li><a href="#about">about</a></li>
-        <li><a href="#contact">contact</a></li>
-      </ul>
+    <ul class="nav-links">
+      <li><a href="#home">home</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#experience">experience</a></li>
+      <li><a href="#about">about</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
 
-      <div class="nav-socials">
-        <a
-          href="https://github.com/vinicimdev"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub"
-        >
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a
-          href="https://vinicim-no-poste.itch.io"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="itch.io"
-        >
-          <i class="fa-brands fa-itch-io"></i>
-        </a>
-        <a
-          href="https://www.linkedin.com/in/vin%C3%ADcius-vieira-alves-januzzi/"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-        >
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
-        <a href="mailto:contatovinij@gmail.com" aria-label="Email">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-      </div>
-
-      <a
-        href="assets/ViniciusJanuzzi_Resume.pdf"
-        download
-        class="resume-btn resume-btn--sm"
-      >
-        <i class="fa-solid fa-file-arrow-down"></i>
-        <span>Resume</span>
+    <div class="nav-socials">
+      <a href="https://github.com/vinicimdev" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <i class="fa-brands fa-github"></i>
       </a>
-    </nav>
+      <a href="https://vinicim-no-poste.itch.io" target="_blank" rel="noopener noreferrer" aria-label="itch.io">
+        <i class="fa-brands fa-itch-io"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/vin%C3%ADcius-vieira-alves-januzzi/" target="_blank"
+        rel="noopener noreferrer" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+      <a href="mailto:contatovinij@gmail.com" aria-label="Email">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+    </div>
 
-    <!-- ===========================================================
+    <a href="assets/ViniciusJanuzzi_Resume.pdf" download class="resume-btn resume-btn--sm">
+      <i class="fa-solid fa-file-arrow-down"></i>
+      <span>Resume</span>
+    </a>
+  </nav>
+
+  <!-- ===========================================================
          HERO (full viewport, cycling gameplay videos)
          =========================================================== -->
-    <section id="home" class="hero">
-      <div class="hero-bg">
-        <video
-          id="hero-video"
-          autoplay
-          muted
-          playsinline
-          poster="https://img.itch.zone/aW1nLzI3MjM2MTQ4LmpwZw==/original/Lt94tI.jpg"
-        ></video>
-        <div class="hero-bg-overlay"></div>
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <video id="hero-video" autoplay muted playsinline
+        poster="https://img.itch.zone/aW1nLzI3MjM2MTQ4LmpwZw==/original/Lt94tI.jpg"></video>
+      <div class="hero-bg-overlay"></div>
+    </div>
+
+    <div class="hero-content">
+      <h1 class="hero-title">
+        Hi, I'm <span class="accent">Vini</span>
+      </h1>
+      <p class="hero-tagline">
+        Gameplay Programmer &amp; Game Developer
+      </p>
+      <p class="hero-sub">(&amp; a lil' bit of everything else :])</p>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">See my work</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
       </div>
+    </div>
 
-      <div class="hero-content">
-        <h1 class="hero-title">
-          Hi, I'm <span class="accent">Vini</span>
-        </h1>
-        <p class="hero-tagline">
-          Gameplay Programmer &amp; Game Developer
-        </p>
-        <p class="hero-sub">(&amp; a lil' bit of everything else :])</p>
+    <a href="#projects" class="hero-scroll" aria-label="Scroll to projects">
+      <i class="fa-solid fa-chevron-down"></i>
+    </a>
+  </section>
 
-        <div class="hero-cta">
-          <a href="#projects" class="btn btn-primary">See my work</a>
-          <a href="#contact" class="btn btn-ghost">Get in touch</a>
-        </div>
-      </div>
-
-      <a href="#projects" class="hero-scroll" aria-label="Scroll to projects">
-        <i class="fa-solid fa-chevron-down"></i>
-      </a>
-    </section>
-
-    <!-- ===========================================================
+  <!-- ===========================================================
          PERSONAL STATEMENT
          =========================================================== -->
-    <section class="statement">
-      <p class="statement-lead">
-        A game developer with over half a decade of experience building
-        games with Unity and C#. I have published 8 games on itch.io,
-        from PC games to mobile and VR experiences. Eager to learn,
-        grow, and help others do the same.
-      </p>
-    </section>
+  <section class="statement">
+    <p class="statement-lead">
+      A game developer with over half a decade of experience building
+      games with Unity and C#. I have published 8 games on itch.io,
+      from PC games to mobile and VR experiences. Eager to learn,
+      grow, and help others do the same.
+    </p>
+  </section>
 
-    <!-- ===========================================================
+  <!-- ===========================================================
          FEATURED PROJECT (big card - Papercut)
          =========================================================== -->
-    <section id="projects" class="section">
-      <div class="section-header">
-        <span class="section-eyebrow">Featured</span>
-        <h2 class="section-title">Most Recent Project</h2>
+  <section id="projects" class="section">
+    <div class="section-header">
+      <span class="section-eyebrow">Featured</span>
+      <h2 class="section-title">Most Recent Project</h2>
+    </div>
+
+    <article class="featured-project">
+      <button type="button" class="featured-media" data-case-study="papercut" aria-label="View Papercut case study">
+        <img src="https://img.itch.zone/aW1nLzI3MjM2MTQ4LmpwZw==/original/Lt94tI.jpg" alt="Papercut cover art" />
+      </button>
+
+      <div class="featured-info">
+        <div class="featured-meta">
+          <span>Unity</span>
+          <span>/</span>
+          <span>2026</span>
+          <span>/</span>
+          <span>Gameplay Programmer</span>
+          <span>/</span>
+          <span>UI Programmer</span>
+        </div>
+
+        <h3 class="featured-title">Papercut</h3>
+
+        <p class="featured-desc">
+          A 3D over-the-shoulder slash-&amp;-dash bullet hell where
+          Little Susie, a 7-year-old princess-loving girl, is sucked
+          into a demonic realm made entirely of paper origami. She
+          shreds through paper demons with her giant enchanted
+          scissors in a world of ballistic movement and procedural
+          chaos.
+        </p>
+
+        <div class="tag-list">
+          <span class="tag">Unity</span>
+          <span class="tag">3D</span>
+          <span class="tag">Bullet Hell</span>
+          <span class="tag">Action</span>
+          <span class="tag">Slash-n-dash</span>
+        </div>
+
+        <div class="featured-links">
+          <button type="button" class="btn btn-primary" data-case-study="papercut">
+            View case study
+          </button>
+          <a
+            href="https://vinicim-no-poste.itch.io/papercut"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-ghost"
+          >
+            Play on itch.io <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
       </div>
+    </article>
+  </section>
 
-      <article class="featured-project">
-        <button
-          type="button"
-          class="featured-media"
-          data-case-study="papercut"
-          aria-label="View Papercut case study"
-        >
-          <img
-            src="https://img.itch.zone/aW1nLzI3MjM2MTQ4LmpwZw==/original/Lt94tI.jpg"
-            alt="Papercut cover art"
-          />
-        </button>
+  <!-- ===========================================================
+         PROJECTS GRID
+         =========================================================== -->
+  <section class="section">
+    <div class="section-header">
+      <h2 class="section-title">Projects</h2>
+    </div>
 
-        <div class="featured-info">
-          <div class="featured-meta">
-            <span>Unity</span>
-            <span>/</span>
-            <span>2025 - 2026</span>
-            <span>/</span>
-            <span>Gameplay Programmer</span>
-          </div>
-
-          <h3 class="featured-title">Papercut</h3>
-
-          <p class="featured-desc">
-            A 3D over-the-shoulder slash-&amp;-dash bullet hell where
-            Little Susie, a 7-year-old princess-loving girl, is sucked
-            into a demonic realm made entirely of paper origami. She
-            shreds through paper demons with her giant enchanted
-            scissors in a world of ballistic movement and procedural
-            chaos.
-          </p>
-
+    <div class="project-grid">
+      <button type="button" class="project-card" data-case-study="papercut" aria-label="View Papercut case study">
+        <div class="project-thumb">
+          <img src="https://img.itch.zone/aW1nLzI3MjM2MTQ4LmpwZw==/original/Lt94tI.jpg" alt="Papercut cover art" />
+          <span class="project-arrow" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-name">Papercut</h3>
+          <p class="project-meta">Gameplay Programmer / 2026</p>
           <div class="tag-list">
             <span class="tag">Unity</span>
             <span class="tag">3D</span>
             <span class="tag">Bullet Hell</span>
             <span class="tag">Action</span>
-            <span class="tag">Third Person</span>
-          </div>
-
-          <div class="featured-links">
-            <button
-              type="button"
-              class="btn btn-primary"
-              data-case-study="papercut"
-            >
-              View case study
-            </button>
-            <a
-              href="https://vinicim-no-poste.itch.io/papercut"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-ghost"
-            >
-              Play on itch.io <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
+            <span class="tag">Slash-n-dash</span>
           </div>
         </div>
-      </article>
-    </section>
+      </button>
 
-    <!-- ===========================================================
-         PROJECTS GRID
-         =========================================================== -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">Projects</h2>
-      </div>
+      <button type="button" class="project-card" data-case-study="a22" aria-label="View A22 - Os Primeiros case study">
+        <div class="project-thumb">
+          <img src="https://img.itch.zone/aW1nLzE4MjU1NDQ3LnBuZw==/original/TvA%2BJt.png"
+            alt="A22 - Os Primeiros cover art" />
+          <span class="project-arrow" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-name">A22 - Os Primeiros</h3>
+          <p class="project-meta">Programmer / 2024</p>
+          <div class="tag-list">
+            <span class="tag">Unity</span>
+            <span class="tag">Puzzle</span>
+            <span class="tag">Suspense</span>
+            <span class="tag">Retro</span>
+          </div>
+        </div>
+      </button>
 
-      <div class="project-grid">
-        <button
-          type="button"
-          class="project-card"
-          data-case-study="papercut"
-          aria-label="View Papercut case study"
-        >
-          <div class="project-thumb">
-            <img
-              src="https://img.itch.zone/aW1nLzI3MjM2MTQ4LmpwZw==/original/Lt94tI.jpg"
-              alt="Papercut cover art"
-            />
-            <span class="project-arrow" aria-hidden="true">
-              <i class="fa-solid fa-arrow-right"></i>
-            </span>
+      <button type="button" class="project-card" data-case-study="bagre"
+        aria-label="View Operacao Bagre Noturno case study">
+        <div class="project-thumb">
+          <img src="https://img.itch.zone/aW1nLzE2MjE1MTQzLnBuZw==/original/xoRlqg.png"
+            alt="Operacao Bagre Noturno cover art" />
+          <span class="project-arrow" aria-hidden="true">
+            <i class="fa-solid fa-arrow-right"></i>
+          </span>
+        </div>
+        <div class="project-body">
+          <h3 class="project-name">Operacao Bagre Noturno</h3>
+          <p class="project-meta">Programmer / System Designer / OST / 2024</p>
+          <div class="tag-list">
+            <span class="tag">Unity</span>
+            <span class="tag">Stealth</span>
+            <span class="tag">PSX</span>
+            <span class="tag">Comedy</span>
           </div>
-          <div class="project-body">
-            <h3 class="project-name">Papercut</h3>
-            <p class="project-meta">Gameplay Programmer / 2025 - 2026</p>
-            <div class="tag-list">
-              <span class="tag">Unity</span>
-              <span class="tag">3D</span>
-              <span class="tag">Bullet Hell</span>
-              <span class="tag">Action</span>
-            </div>
-          </div>
-        </button>
+        </div>
+      </button>
+    </div>
+  </section>
 
-        <button
-          type="button"
-          class="project-card"
-          data-case-study="a22"
-          aria-label="View A22 - Os Primeiros case study"
-        >
-          <div class="project-thumb">
-            <img
-              src="https://img.itch.zone/aW1nLzE4MjU1NDQ3LnBuZw==/original/TvA%2BJt.png"
-              alt="A22 - Os Primeiros cover art"
-            />
-            <span class="project-arrow" aria-hidden="true">
-              <i class="fa-solid fa-arrow-right"></i>
-            </span>
-          </div>
-          <div class="project-body">
-            <h3 class="project-name">A22 - Os Primeiros</h3>
-            <p class="project-meta">Programmer / 2024</p>
-            <div class="tag-list">
-              <span class="tag">Unity</span>
-              <span class="tag">Puzzle</span>
-              <span class="tag">Suspense</span>
-              <span class="tag">Retro</span>
-            </div>
-          </div>
-        </button>
-
-        <button
-          type="button"
-          class="project-card"
-          data-case-study="bagre"
-          aria-label="View Operacao Bagre Noturno case study"
-        >
-          <div class="project-thumb">
-            <img
-              src="https://img.itch.zone/aW1nLzE2MjE1MTQzLnBuZw==/original/xoRlqg.png"
-              alt="Operacao Bagre Noturno cover art"
-            />
-            <span class="project-arrow" aria-hidden="true">
-              <i class="fa-solid fa-arrow-right"></i>
-            </span>
-          </div>
-          <div class="project-body">
-            <h3 class="project-name">Operacao Bagre Noturno</h3>
-            <p class="project-meta">Programmer / System Designer / OST / 2024</p>
-            <div class="tag-list">
-              <span class="tag">Unity</span>
-              <span class="tag">Stealth</span>
-              <span class="tag">PSX</span>
-              <span class="tag">Comedy</span>
-            </div>
-          </div>
-        </button>
-      </div>
-    </section>
-
-    <!-- ===========================================================
+  <!-- ===========================================================
          ABOUT
          =========================================================== -->
-    <section id="about" class="section">
-      <div class="section-header">
-        <h2 class="section-title">About</h2>
+  <section id="about" class="section">
+    <div class="section-header">
+      <h2 class="section-title">About</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I am a Gameplay Engineer with over 6+ years of experience with Unity Engine and C#, focusing on Gameplay
+          Systems and helping different areas when needed. I have published 8 games on itch.io with 100+ downloads and
+          1000+ views, targeting mainly PC and Mobile platforms.
+        </p>
+        <p>
+          I have a Bachelor Degree from the Pontifícia Universidade Católica de São Paulo (PUC-SP), where I learnt the
+          whole Game Development pipeline, along with the multiple areas related to developing games. I also have the
+          Programming for Games, Web and Mobile specialization program at Vancouver Film School, which tailored my
+          skills towards Gameplay Programming, Systems architecture and optimization techniques.
+        </p>
+        <p>
+          I am looking for a Junior Gameplay Engineer position, mainly focusing on Unity Engine with C# and always open
+          to learn new softwares, technologies and programming languages.
+        </p>
       </div>
 
-      <div class="about-grid">
-        <div class="about-text">
-          <p>
-            I am a Gameplay Engineer with over 6+ years of experience with Unity Engine and C#, focusing on Gameplay Systems and helping different areas when needed. I have published 8 games on itch.io with 100+ downloads and 1000+ views, targeting mainly PC and Mobile platforms.
-          </p>
-          <p>
-            I have a Bachelor Degree from the Pontifícia Universidade Católica de São Paulo (PUC-SP), where I learnt the whole Game Development pipeline, along with the multiple areas related to developing games. I also have the Programming for Games, Web and Mobile specialization program at Vancouver Film School, which tailored my skills towards Gameplay Programming, Systems architecture and optimization techniques.
-          </p>
-          <p>
-            I am looking for a Junior Gameplay Engineer position, mainly focusing on Unity Engine with C# and always open to learn new softwares, technologies and programming languages.
-          </p>
-        </div>
+      <aside class="about-side">
+        <h4>Currently</h4>
+        <p>Working on Papercut @ VFS</p>
 
-        <aside class="about-side">
-          <h4>Currently</h4>
-          <p>Working on Papercut @ VFS</p>
+        <h4>Tools</h4>
+        <p>Unity / C# / Git</p>
 
-          <h4>Tools</h4>
-          <p>Unity / C# / Git</p>
+        <h4>Elsewhere</h4>
+        <p>Vancouver, BC (UTC-07:00)</p>
+        <p style="color: var(--text-1); font-size: 13px; margin-top: 4px;">Willing to relocate</p>
+      </aside>
+    </div>
+  </section>
 
-          <h4>Elsewhere</h4>
-          <p>Vancouver, BC (UTC-07:00)</p>
-          <p style="color: var(--text-1); font-size: 13px; margin-top: 4px;">Willing to relocate</p>
-        </aside>
-      </div>
-    </section>
-
-    <!-- ===========================================================
-         TESTIMONY
+  <!-- ===========================================================
+         EXPERIENCE TIMELINE
+         Alternating cards along a central vertical line.
+         Each timeline-item has "left" or "right" modifier on desktop;
+         on mobile they all collapse to a single left column.
          =========================================================== -->
-    <section id="testimony" class="section">
-      <div class="section-header">
-        <span class="section-eyebrow">Testimony</span>
-        <h2 class="section-title">What people say</h2>
-      </div>
+  <section id="experience" class="section">
+    <div class="section-header">
+      <span class="section-eyebrow">Journey</span>
+      <h2 class="section-title">Experience</h2>
+    </div>
 
-      <article class="testimony-card">
-        <div class="testimony-person">
-          <img src="images/testimony-headshot.webp" alt="Joel van der Lee" />
-          <div>
-            <p class="testimony-name">Joel van der Lee</p>
-            <p class="testimony-role">Project Manager | Level Designer | Writer</p>
+    <div class="timeline">
+      <div class="timeline-line" aria-hidden="true"></div>
+
+      <div class="timeline-item timeline-item--right">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">Sep 2023 &mdash; Apr 2024</span>
+          <h3 class="timeline-role">Professor</h3>
+          <p class="timeline-company">SuperGeeks &middot; Full-time</p>
+          <p class="timeline-desc">
+            1st School of Programming and Robotics for Kids and Teens.
+            Taught programming fundamentals and game design to students,
+            adapting complex concepts for young learners.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Game Design</span>
+            <span class="tag">Teaching</span>
           </div>
         </div>
-        <blockquote class="testimony-quote">
-          <i class="fa-solid fa-quote-left"></i>
-          Happiness is when what you think.
-        </blockquote>
-      </article>
-    </section>
-
-    <!-- ===========================================================
-         CONTACT
-         =========================================================== -->
-    <section id="contact" class="section">
-      <div class="section-header">
-        <h2 class="section-title">Let's talk</h2>
       </div>
 
-      <div class="contact-content">
-        <p class="contact-lead">
-          Open to work, collabs, or just to say hi.
-        </p>
-        <a href="mailto:contatovinij@gmail.com" class="contact-email">
-          contatovinij@gmail.com
-        </a>
-
-        <div class="contact-resume">
-          <a
-            href="assets/ViniciusJanuzzi_Resume.pdf"
-            download
-            class="resume-btn resume-btn--lg"
-          >
-            <i class="fa-solid fa-file-arrow-down"></i>
-            <span>Download Resume</span>
-          </a>
-        </div>
-
-        <div class="contact-socials">
-          <a
-            href="https://github.com/vinicimdev"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa-brands fa-github"></i>
-            <span>GitHub</span>
-          </a>
-          <a
-            href="https://vinicim-no-poste.itch.io"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa-brands fa-itch-io"></i>
-            <span>itch.io</span>
-          </a>
-          <a
-            href="https://www.linkedin.com/in/vin%C3%ADcius-vieira-alves-januzzi/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-            <span>LinkedIn</span>
-          </a>
+      <div class="timeline-item timeline-item--left">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">Jan 2023 &mdash; Sep 2023</span>
+          <h3 class="timeline-role">Professor</h3>
+          <p class="timeline-company">Engineering For Kids Brasil &middot; Part-time</p>
+          <p class="timeline-desc">
+            Taught engineering and programming concepts to kids through
+            project-based lessons, fostering creativity and problem-solving.
+          </p>
+          <div class="tag-list">
+            <span class="tag">Teaching</span>
+            <span class="tag">Robotics</span>
+          </div>
         </div>
       </div>
-    </section>
 
-    <!-- ===========================================================
-         CASE STUDY MODAL
-         Rendered once, populated by JS on demand.
-         =========================================================== -->
-    <div
-      class="modal"
-      id="case-study-modal"
-      aria-hidden="true"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="modal-title"
-    >
-      <div class="modal-backdrop" data-close></div>
-      <div class="modal-window">
-        <button
-          type="button"
-          class="modal-close"
-          data-close
-          aria-label="Close case study"
-        >
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-        <div class="modal-body" id="modal-body">
-          <!-- populated by JS -->
+      <div class="timeline-item timeline-item--right">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">Aug 2022 &mdash; Dec 2022</span>
+          <h3 class="timeline-role">Programmer</h3>
+          <p class="timeline-company">Simula Health &middot; Internship</p>
+          <p class="timeline-desc">
+            Developed features using object-oriented programming and
+            contributed to medical simulation software as part of a
+            collaborative development team.
+          </p>
+          <div class="tag-list">
+            <span class="tag">OOP</span>
+            <span class="tag">Internship</span>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <footer class="footer">
-      <p>© 2026 Vinicius Januzzi, built by hand with HTML &amp; CSS</p>
-    </footer>
+  <!-- ===========================================================
+         TESTIMONY
+         =========================================================== -->
+  <section id="testimony" class="section">
+    <div class="section-header">
+      <span class="section-eyebrow">Testimony</span>
+      <h2 class="section-title">What people say</h2>
+    </div>
 
-    <!-- ===========================================================
+    <article class="testimony-card">
+      <div class="testimony-person">
+        <img src="images/testimony-headshot.webp" alt="Joel van der Lee" />
+        <div>
+          <p class="testimony-name">Joel van der Lee</p>
+          <p class="testimony-role">Project Manager | Level Designer | Writer</p>
+        </div>
+      </div>
+      <blockquote class="testimony-quote">
+        <i class="fa-solid fa-quote-left"></i>
+        Happiness is when what you think.
+      </blockquote>
+    </article>
+  </section>
+
+  <!-- ===========================================================
+         CONTACT
+         =========================================================== -->
+  <section id="contact" class="section">
+    <div class="section-header">
+      <h2 class="section-title">Let's talk</h2>
+    </div>
+
+    <div class="contact-content">
+      <p class="contact-lead">
+        Open to work, collabs, or just to say hi.
+      </p>
+      <a href="mailto:contatovinij@gmail.com" class="contact-email">
+        contatovinij@gmail.com
+      </a>
+
+      <div class="contact-resume">
+        <a
+          href="assets/ViniciusJanuzzi_Resume.pdf"
+          download
+          class="resume-btn resume-btn--lg"
+        >
+          <i class="fa-solid fa-file-arrow-down"></i>
+          <span>Download Resume</span>
+        </a>
+      </div>
+
+      <div class="contact-socials">
+        <a
+          href="https://github.com/vinicimdev"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-github"></i>
+          <span>GitHub</span>
+        </a>
+        <a
+          href="https://vinicim-no-poste.itch.io"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-itch-io"></i>
+          <span>itch.io</span>
+        </a>
+        <a
+          href="https://www.linkedin.com/in/vin%C3%ADcius-vieira-alves-januzzi/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="fa-brands fa-linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================================================
+         CASE STUDY MODAL
+         Rendered once, populated by JS on demand.
+         =========================================================== -->
+  <div class="modal" id="case-study-modal" aria-hidden="true" role="dialog" aria-modal="true"
+    aria-labelledby="modal-title">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-window">
+      <button type="button" class="modal-close" data-close aria-label="Close case study">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="modal-body" id="modal-body">
+        <!-- populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Vinicius Januzzi, built by hand with HTML &amp; CSS</p>
+  </footer>
+
+  <!-- ===========================================================
          HERO VIDEO CYCLING
          When one video ends, the next in the list plays.
          Loops back to the first after the last.
          =========================================================== -->
-    <script>
-      (function () {
-        const videos = [
-          "assets/papercut-1.mp4",
-          "assets/papercut-2.mp4",
-          "assets/papercut-3.mp4",
-        ];
-        const video = document.getElementById("hero-video");
-        if (!video) return;
+  <script>
+    (function () {
+      const videos = [
+        "assets/papercut-1.mp4",
+        "assets/papercut-2.mp4",
+        "assets/papercut-3.mp4",
+      ];
+      const video = document.getElementById("hero-video");
+      if (!video) return;
 
-        let idx = 0;
+      let idx = 0;
 
-        function playNext() {
-          video.src = videos[idx];
-          video.play().catch(() => {
-            // autoplay can fail on some browsers - fallback: poster stays visible
-          });
-          idx = (idx + 1) % videos.length;
-        }
+      function playNext() {
+        video.src = videos[idx];
+        video.play().catch(() => {
+          // autoplay can fail on some browsers - fallback: poster stays visible
+        });
+        idx = (idx + 1) % videos.length;
+      }
 
-        video.addEventListener("ended", playNext);
-        playNext();
-      })();
-    </script>
+      video.addEventListener("ended", playNext);
+      playNext();
+    })();
+  </script>
 
-    <!-- ===========================================================
+  <!-- ===========================================================
          CASE STUDIES
          Each entry is one project. Add here, no HTML changes needed
          beyond the card's data-case-study="id" attribute.
          =========================================================== -->
-    <script>
-      const caseStudies = {
-        papercut: {
-          title: "Papercut",
-          cover:
-            "https://img.itch.zone/aW1nLzI3MjM2MTQ4LmpwZw==/original/Lt94tI.jpg",
-          meta: ["Unity", "2025 - 2026", "Gameplay Programmer"],
-          tags: ["Unity", "3D", "Bullet Hell", "Action", "Third Person"],
-          problem: `During the early stages of the production of Papercut, one of the problems I was facing was the face generation algorithm to cover the holes inside the procedurally generated meshes. The faces that were being generated were often having gaps or generating unwanted artifacts. The algorithm I was using at that time is called Fan Triangulation, which consists of choosing the first found vertex and connecting it to every other vertex in the polygon to generate a face in run time. The problem is that this algorithm only works for convex polygons and usually a good percentage of the meshes used in games nowadays are non-convex.`,
-          decision: `To fix this problem, I had to either keep trying to refine the Fan Triangulation algorithm or go for a different approach. Because this is such an unexplored and experimental feature, if I found no solution for this problem, this would be one of the features that would get cut out of the project's scope.
+  <script>
+    const caseStudies = {
+      papercut: {
+        title: "Papercut",
+        cover:
+          "https://img.itch.zone/aW1nLzI3MjM2MTQ4LmpwZw==/original/Lt94tI.jpg",
+        meta: ["Unity", "2026", "Gameplay Programmer", "UI Programmer"],
+        tags: ["Unity", "3D", "Bullet Hell", "Action", "Third Person"],
+        problem: `During the early stages of the production of Papercut, one of the problems I was facing was the face generation algorithm to cover the holes inside the procedurally generated meshes. The faces that were being generated were often having gaps or generating unwanted artifacts. The algorithm I was using at that time is called Fan Triangulation, which consists of choosing the first found vertex and connecting it to every other vertex in the polygon to generate a face in run time. The problem is that this algorithm only works for convex polygons and usually a good percentage of the meshes used in games nowadays are non-convex.`,
+        decision: `To fix this problem, I had to either keep trying to refine the Fan Triangulation algorithm or go for a different approach. Because this is such an unexplored and experimental feature, if I found no solution for this problem, this would be one of the features that would get cut out of the project's scope.
 
 Doing some research, I found out about Ear Clipping, a different polygon triangulation algorithm that is less performant than Fan triangulating, by a considerate amount. But, with this new algorithm, I could refine the Fan Triangulation without completely scraping it and achieving a better result visually. Because there was no direct comparison of Fan Triangulation against Ear Clipping, I initially tried asking Technical and 3D artists about 3D modelling softwares (Maya and Blender) on how they cleaned the faces of their 3D models. From that, I learned that Blender is open source, so I started digging through how they dealt with that. With my research, I discovered that there were no other simpler ways of fixing my problem in an optimized way.
 
 So, I started prototyping the new algorithm and learned that it was exactly the result I wanted for the feature I was working on (procedural cuts) and there was space for optimizing, giving me both a good frame rate and stunning looks, with minimal occurrence of artifacts.`,
-          result: `With that decision made, I could deliver a fully functional and performant system that achieved exactly what the designers were expecting from the procedural cuts. One thing that didn’t work well was the time it took to get this done. It took me approximately 2 to 3 weeks working on this feature, which I could have been more certain and instead of doing the trial-and-error approach, I could have searched more and looked for more specialized guidance.
+        result: `With that decision made, I could deliver a fully functional and performant system that achieved exactly what the designers were expecting from the procedural cuts. One thing that didn't work well was the time it took to get this done. It took me approximately 2 to 3 weeks working on this feature, which I could have been more certain and instead of doing the trial-and-error approach, I could have searched more and looked for more specialized guidance.
 Currently, we are reaching an average of about 58~60 frames per second, 16ms, with barely any stutters during gameplay.
 If I could work on this feature for an extra week, I would cover more edge cases regarding exotic 3D meshes, making sure that the algorithm works smoothly for any scenario.
 `,
-          playUrl: "https://vinicim-no-poste.itch.io/papercut",
-          playLabel: "Play on itch.io",
-        },
-        a22: {
-          title: "A22 - Os Primeiros",
-          cover:
-            "https://img.itch.zone/aW1nLzE4MjU1NDQ3LnBuZw==/original/TvA%2BJt.png",
-          meta: ["Unity", "2024", "Programmer"],
-          tags: ["Unity", "Puzzle", "Suspense", "Retro"],
-          problem:
-            "[Problem placeholder] What was the core design or technical challenge? Describe the constraint you were solving for.",
-          decision:
-            "[Decision placeholder] What did you choose to do, and what did you reject?",
-          result:
-            "[Result placeholder] What actually happened? Numbers, feel, impact.",
-          playUrl: "https://jhorro.itch.io/a22-osprimeiros",
-          playLabel: "Play on itch.io",
-        },
-        bagre: {
-          title: "Operacao Bagre Noturno",
-          cover:
-            "https://img.itch.zone/aW1nLzE2MjE1MTQzLnBuZw==/original/xoRlqg.png",
-          meta: ["Unity", "2024", "Programmer / System Designer / OST"],
-          tags: ["Unity", "Stealth", "PSX", "Comedy"],
-          problem:
-            "[Problem placeholder] What was the core design or technical challenge? Describe the constraint you were solving for.",
-          decision:
-            "[Decision placeholder] What did you choose to do, and what did you reject?",
-          result:
-            "[Result placeholder] What actually happened? Numbers, feel, impact.",
-          playUrl: "https://jhorro.itch.io/operacao-bagre-noturno",
-          playLabel: "Play on itch.io",
-        },
-      };
+        playUrl: "https://vinicim-no-poste.itch.io/papercut",
+        playLabel: "Play on itch.io",
+      },
+      a22: {
+        title: "A22 - Os Primeiros",
+        cover:
+          "https://img.itch.zone/aW1nLzE4MjU1NDQ3LnBuZw==/original/TvA%2BJt.png",
+        meta: ["Unity", "2024", "Programmer"],
+        tags: ["Unity", "Puzzle", "Suspense", "Retro"],
+        problem:
+          "[Problem placeholder] What was the core design or technical challenge? Describe the constraint you were solving for.",
+        decision:
+          "[Decision placeholder] What did you choose to do, and what did you reject?",
+        result:
+          "[Result placeholder] What actually happened? Numbers, feel, impact.",
+        playUrl: "https://jhorro.itch.io/a22-osprimeiros",
+        playLabel: "Play on itch.io",
+      },
+      bagre: {
+        title: "Operacao Bagre Noturno",
+        cover:
+          "https://img.itch.zone/aW1nLzE2MjE1MTQzLnBuZw==/original/xoRlqg.png",
+        meta: ["Unity", "2024", "Programmer / System Designer / OST"],
+        tags: ["Unity", "Stealth", "PSX", "Comedy"],
+        problem:
+          "[Problem placeholder] What was the core design or technical challenge? Describe the constraint you were solving for.",
+        decision:
+          "[Decision placeholder] What did you choose to do, and what did you reject?",
+        result:
+          "[Result placeholder] What actually happened? Numbers, feel, impact.",
+        playUrl: "https://jhorro.itch.io/operacao-bagre-noturno",
+        playLabel: "Play on itch.io",
+      },
+    };
 
-      (function () {
-        const modal = document.getElementById("case-study-modal");
-        const modalBody = document.getElementById("modal-body");
-        if (!modal || !modalBody) return;
+    (function () {
+      const modal = document.getElementById("case-study-modal");
+      const modalBody = document.getElementById("modal-body");
+      if (!modal || !modalBody) return;
 
-        function renderCaseStudy(data) {
-          const metaHTML = data.meta
-            .map((m, i) =>
-              i < data.meta.length - 1
-                ? `<span>${m}</span><span>/</span>`
-                : `<span>${m}</span>`
-            )
+      function renderCaseStudy(data) {
+        const metaHTML = data.meta
+          .map((m, i) =>
+            i < data.meta.length - 1
+              ? `<span>${m}</span><span>/</span>`
+              : `<span>${m}</span>`
+          )
+          .join("");
+
+        const tagsHTML = data.tags
+          .map((t) => `<span class="tag">${t}</span>`)
+          .join("");
+
+        // split on blank lines so multi-paragraph text renders with real
+        // spacing between paragraphs
+        const paragraphs = (text) =>
+          text
+            .split(/\n\s*\n/)
+            .map((p) => `<p>${p.trim()}</p>`)
             .join("");
 
-          const tagsHTML = data.tags
-            .map((t) => `<span class="tag">${t}</span>`)
-            .join("");
-
-          // split on blank lines so multi-paragraph text renders with real
-          // spacing between paragraphs
-          const paragraphs = (text) =>
-            text
-              .split(/\n\s*\n/)
-              .map((p) => `<p>${p.trim()}</p>`)
-              .join("");
-
-          modalBody.innerHTML = `
+        modalBody.innerHTML = `
             <div class="cs-media">
               <img src="${data.cover}" alt="${data.title} cover art" />
             </div>
@@ -587,43 +594,44 @@ If I could work on this feature for an extra week, I would cover more edge cases
               </div>
             </div>
           `;
-        }
+      }
 
-        function openModal(id) {
-          const data = caseStudies[id];
-          if (!data) return;
-          renderCaseStudy(data);
-          modal.classList.add("is-open");
-          modal.setAttribute("aria-hidden", "false");
-          document.body.style.overflow = "hidden";
-        }
+      function openModal(id) {
+        const data = caseStudies[id];
+        if (!data) return;
+        renderCaseStudy(data);
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
 
-        function closeModal() {
-          modal.classList.remove("is-open");
-          modal.setAttribute("aria-hidden", "true");
-          document.body.style.overflow = "";
-        }
+      function closeModal() {
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
 
-        // trigger from any element with data-case-study="id"
-        document.querySelectorAll("[data-case-study]").forEach((el) => {
-          el.addEventListener("click", (e) => {
-            e.preventDefault();
-            openModal(el.dataset.caseStudy);
-          });
+      // trigger from any element with data-case-study="id"
+      document.querySelectorAll("[data-case-study]").forEach((el) => {
+        el.addEventListener("click", (e) => {
+          e.preventDefault();
+          openModal(el.dataset.caseStudy);
         });
+      });
 
-        // close on X, backdrop, or any [data-close]
-        modal.querySelectorAll("[data-close]").forEach((el) => {
-          el.addEventListener("click", closeModal);
-        });
+      // close on X, backdrop, or any [data-close]
+      modal.querySelectorAll("[data-close]").forEach((el) => {
+        el.addEventListener("click", closeModal);
+      });
 
-        // close on Escape key
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && modal.classList.contains("is-open")) {
-            closeModal();
-          }
-        });
-      })();
-    </script>
-  </body>
+      // close on Escape key
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("is-open")) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
+</body>
+
 </html>
