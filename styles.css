@@ -416,24 +416,30 @@ button {
 
 .featured-media {
   display: block;
+  position: relative;
   aspect-ratio: 16 / 10;
   overflow: hidden;
   border-radius: 12px;
   background: var(--bg-2);
-  padding: 0;
-  border: none;
-  cursor: pointer;
   width: 100%;
 }
 
-.featured-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.featured-media .cs-carousel {
+  position: absolute;
+  inset: 0;
+}
+
+.featured-media .cs-carousel-track {
+  cursor: pointer;
+}
+
+.featured-media .cs-carousel-track img,
+.featured-media .cs-carousel-track video {
   transition: transform 0.5s var(--ease);
 }
 
-.featured-media:hover img {
+.featured-media:hover .cs-carousel-track img,
+.featured-media:hover .cs-carousel-track video {
   transform: scale(1.03);
 }
 
@@ -678,196 +684,6 @@ button {
 }
 
 /* =========================================================
-   EXPERIENCE TIMELINE (NEW)
-   Central vertical line with alternating cards on each side.
-   Mobile collapses to a single left-aligned column.
-   ========================================================= */
-.timeline {
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px 0;
-}
-
-/* Central vertical line with faded ends. */
-.timeline-line {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 2px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    var(--border) 8%,
-    var(--border) 92%,
-    transparent 100%
-  );
-  transform: translateX(-50%);
-}
-
-.timeline-item {
-  position: relative;
-  width: 50%;
-  padding: 20px 40px;
-  margin-bottom: 20px;
-}
-
-.timeline-item--left {
-  left: 0;
-  padding-right: 60px;
-  text-align: right;
-}
-
-.timeline-item--right {
-  left: 50%;
-  padding-left: 60px;
-  text-align: left;
-}
-
-/* Glowing dot marking the moment on the central line. */
-.timeline-dot {
-  position: absolute;
-  top: 32px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--accent);
-  box-shadow: 0 0 0 4px var(--bg-0), 0 0 16px var(--accent);
-  z-index: 2;
-}
-
-.timeline-item--left .timeline-dot {
-  right: -8px;
-}
-
-.timeline-item--right .timeline-dot {
-  left: -8px;
-}
-
-.timeline-card {
-  background: var(--bg-1);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 24px;
-  position: relative;
-  transition: transform 0.35s var(--ease),
-    border-color 0.35s var(--ease),
-    box-shadow 0.35s var(--ease);
-}
-
-.timeline-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 23, 68, 0.3);
-  box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.7),
-    0 0 20px -4px rgba(255, 23, 68, 0.15);
-}
-
-/* Little arrow pointing from the card toward the center line. */
-.timeline-card::before {
-  content: "";
-  position: absolute;
-  top: 28px;
-  width: 12px;
-  height: 12px;
-  background: var(--bg-1);
-  border-top: 1px solid var(--border);
-  border-right: 1px solid var(--border);
-  transition: border-color 0.35s var(--ease);
-}
-
-.timeline-item--left .timeline-card::before {
-  right: -7px;
-  transform: rotate(45deg);
-}
-
-.timeline-item--right .timeline-card::before {
-  left: -7px;
-  transform: rotate(-135deg);
-}
-
-.timeline-item:hover .timeline-card::before {
-  border-color: rgba(255, 23, 68, 0.3);
-}
-
-.timeline-date {
-  display: inline-block;
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--accent);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-
-.timeline-role {
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: var(--text-0);
-  margin-bottom: 4px;
-}
-
-.timeline-company {
-  font-size: 15px;
-  color: var(--text-1);
-  margin-bottom: 12px;
-  font-weight: 500;
-}
-
-.timeline-desc {
-  font-size: 14px;
-  color: var(--text-1);
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-/* Tag alignment respects the card's text alignment. */
-.timeline-item--left .tag-list {
-  justify-content: flex-end;
-}
-
-.timeline-item--right .tag-list {
-  justify-content: flex-start;
-}
-
-/* --- Mobile: everything to a single left column --- */
-@media (max-width: 768px) {
-  .timeline-line {
-    left: 20px;
-    transform: none;
-  }
-
-  .timeline-item,
-  .timeline-item--left,
-  .timeline-item--right {
-    width: 100%;
-    left: 0;
-    padding-left: 60px;
-    padding-right: 20px;
-    text-align: left;
-  }
-
-  .timeline-item--left .timeline-dot,
-  .timeline-item--right .timeline-dot {
-    left: 12px;
-    right: auto;
-  }
-
-  .timeline-item--left .timeline-card::before,
-  .timeline-item--right .timeline-card::before {
-    left: -7px;
-    right: auto;
-    transform: rotate(-135deg);
-  }
-
-  .timeline-item--left .tag-list,
-  .timeline-item--right .tag-list {
-    justify-content: flex-start;
-  }
-}
-
-/* =========================================================
    CONTACT
    ========================================================= */
 .contact-content {
@@ -943,6 +759,147 @@ button {
   font-weight: 500;
   color: var(--text-0);
   letter-spacing: -0.01em;
+}
+
+/* =========================================================
+   EXPERIENCE (zigzag timeline)
+   Central vertical line, cards alternate sides.
+   Each card has a glowing dot on the line + a subtle notch
+   pointing toward it.
+   ========================================================= */
+.experience-timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+/* the vertical line down the center */
+.experience-timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.experience-item {
+  position: relative;
+  width: calc(50% - 40px);
+  margin-bottom: 48px;
+  z-index: 1;
+}
+
+.experience-item:last-child {
+  margin-bottom: 0;
+}
+
+/* odd items go to the RIGHT of the line */
+.experience-item:nth-child(odd) {
+  margin-left: calc(50% + 40px);
+}
+
+/* even items go to the LEFT of the line, text right-aligned */
+.experience-item:nth-child(even) {
+  margin-right: calc(50% + 40px);
+  text-align: right;
+}
+
+/* --- the glowing dot on the timeline --- */
+.experience-item::after {
+  content: "";
+  position: absolute;
+  top: 34px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--bg-0), 0 0 16px rgba(255, 23, 68, 0.7),
+    0 0 32px rgba(255, 23, 68, 0.35);
+  z-index: 2;
+}
+
+.experience-item:nth-child(odd)::after {
+  left: -47px; /* 40px gap + 7px (half dot) to land on the center line */
+}
+
+.experience-item:nth-child(even)::after {
+  right: -47px;
+}
+
+/* --- the card itself --- */
+.experience-card {
+  position: relative;
+  background: var(--bg-1);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px 28px;
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+
+.experience-item:hover .experience-card {
+  border-color: rgba(255, 23, 68, 0.25);
+}
+
+.experience-item:hover::after {
+  box-shadow: 0 0 0 4px var(--bg-0), 0 0 20px rgba(255, 23, 68, 0.9),
+    0 0 40px rgba(255, 23, 68, 0.5);
+}
+
+/* --- the notch pointing from card toward the line ---
+   Rotated square with only 2 borders visible, gives a
+   clean triangular arrow tip that matches the card. */
+.experience-card::before {
+  content: "";
+  position: absolute;
+  top: 32px;
+  width: 14px;
+  height: 14px;
+  background: var(--bg-1);
+  transform: rotate(45deg);
+}
+
+.experience-item:nth-child(odd) .experience-card::before {
+  left: -8px;
+  border-left: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.experience-item:nth-child(even) .experience-card::before {
+  right: -8px;
+  border-right: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+}
+
+.experience-date {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.experience-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+  color: var(--text-0);
+}
+
+.experience-company {
+  font-size: 14px;
+  color: var(--text-1);
+  margin-bottom: 12px;
+}
+
+.experience-desc {
+  color: var(--text-1);
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 16px;
 }
 
 /* =========================================================
@@ -1171,10 +1128,115 @@ button {
   background: var(--bg-2);
 }
 
-.cs-media img {
+/* Carousel container fills the cs-media aspect box */
+.cs-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.cs-carousel-track {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 0.2s var(--ease);
+}
+
+.cs-carousel-track img,
+.cs-carousel-track video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+
+/* Arrows: hidden by default, appear on carousel hover */
+.cs-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 13px;
+  padding: 0;
+  opacity: 0;
+  transition: opacity 0.3s var(--ease), background 0.2s var(--ease),
+    transform 0.2s var(--ease);
+  z-index: 2;
+}
+
+.cs-carousel:hover .cs-carousel-arrow {
+  opacity: 1;
+}
+
+.cs-carousel-arrow:hover {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.cs-carousel-prev {
+  left: 14px;
+}
+.cs-carousel-prev:hover {
+  transform: translateY(-50%) translateX(-2px);
+}
+
+.cs-carousel-next {
+  right: 14px;
+}
+.cs-carousel-next:hover {
+  transform: translateY(-50%) translateX(2px);
+}
+
+/* Dots */
+.cs-carousel-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 2;
+}
+
+.cs-carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: width 0.3s var(--ease), background 0.25s var(--ease);
+}
+
+.cs-carousel-dot:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.cs-carousel-dot.is-active {
+  background: var(--accent);
+  width: 22px;
+}
+
+/* Single-media state: hide navigation entirely */
+.cs-carousel[data-single="true"] .cs-carousel-arrow,
+.cs-carousel[data-single="true"] .cs-carousel-dots {
+  display: none;
 }
 
 .cs-content {
@@ -1267,6 +1329,38 @@ button {
     grid-template-columns: 1fr;
     padding: 28px;
     gap: 24px;
+  }
+
+  /* --- timeline collapses to single column with line on the left --- */
+  .experience-timeline::before {
+    left: 12px;
+    transform: none;
+  }
+
+  .experience-item,
+  .experience-item:nth-child(odd),
+  .experience-item:nth-child(even) {
+    width: auto;
+    margin-left: 44px;
+    margin-right: 0;
+    text-align: left;
+  }
+
+  .experience-item::after,
+  .experience-item:nth-child(odd)::after,
+  .experience-item:nth-child(even)::after {
+    left: -39px;
+    right: auto;
+  }
+
+  .experience-card::before,
+  .experience-item:nth-child(odd) .experience-card::before,
+  .experience-item:nth-child(even) .experience-card::before {
+    left: -8px;
+    right: auto;
+    border: none;
+    border-left: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
   }
 
   .cs-content {
