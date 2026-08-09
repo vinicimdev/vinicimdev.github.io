@@ -1292,6 +1292,14 @@ button {
   margin-top: 14px;
 }
 
+/* highConcept variant: no section header, brighter and slightly larger
+   text so it reads like the game's pitch instead of a body paragraph. */
+.cs-highconcept p {
+  color: var(--text-0);
+  font-size: 17px;
+  line-height: 1.65;
+}
+
 .cs-tags {
   margin: 32px 0 24px;
 }
