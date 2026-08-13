@@ -1292,12 +1292,115 @@ button {
   margin-top: 14px;
 }
 
-/* highConcept variant: no section header, brighter and slightly larger
-   text so it reads like the game's pitch instead of a body paragraph. */
-.cs-highconcept p {
+/* --- Tabs (only rendered when project has 2+ sections) --- */
+.cs-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 28px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.cs-tabs::-webkit-scrollbar { display: none; }
+
+.cs-tab {
+  position: relative;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-1);
+  background: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.25s var(--ease);
+}
+
+.cs-tab::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: -1px;
+  height: 2px;
+  background: var(--accent);
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--accent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s var(--ease);
+}
+
+.cs-tab:hover {
+  color: var(--text-0);
+}
+
+.cs-tab.is-active {
+  color: var(--text-0);
+  font-weight: 600;
+}
+
+.cs-tab.is-active::after {
+  transform: scaleX(1);
+}
+
+/* --- Panels (only active is visible) --- */
+.cs-panel {
+  display: none;
+}
+
+.cs-panel.is-active {
+  display: block;
+  animation: csPanelIn 0.25s var(--ease);
+}
+
+@keyframes csPanelIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Description panel: brighter, slightly larger, feels like the pitch --- */
+.cs-description p {
   color: var(--text-0);
   font-size: 17px;
   line-height: 1.65;
+}
+
+.cs-description p + p {
+  margin-top: 16px;
+}
+
+/* --- Team panel: grid of name+role cards --- */
+.cs-team {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.cs-team-member {
+  padding: 16px 18px;
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.cs-team-member:hover {
+  border-color: rgba(255, 23, 68, 0.25);
+  transform: translateY(-2px);
+}
+
+.cs-team-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-0);
+  margin-bottom: 4px;
+}
+
+.cs-team-role {
+  font-size: 13px;
+  color: var(--text-1);
+  line-height: 1.5;
 }
 
 .cs-tags {
