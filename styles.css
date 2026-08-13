@@ -270,6 +270,9 @@ button {
   line-height: 1.05;
   min-height: 3.2em;
   margin-bottom: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 .hero-title .accent {
