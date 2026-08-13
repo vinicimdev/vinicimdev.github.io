@@ -646,9 +646,63 @@ button {
    ========================================================= */
 .about-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: 60px;
+  grid-template-columns: 240px 1.5fr 1fr;
+  gap: 48px;
   align-items: start;
+}
+
+/* --- Circular photo with rotating neon outline (same trick as project cards) --- */
+.about-photo {
+  position: relative;
+  isolation: isolate;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-2);
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s var(--ease);
+}
+
+.about-photo:hover img {
+  transform: scale(1.05);
+}
+
+/* rotating outline: conic-gradient masked to a 2px ring around the circle */
+.about-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: conic-gradient(
+    from var(--border-angle),
+    transparent 0deg,
+    transparent 260deg,
+    var(--accent) 310deg,
+    #ff8ba0 330deg,
+    var(--accent) 350deg,
+    transparent 360deg
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.about-photo:hover::before {
+  opacity: 1;
+  animation: card-outline 2.5s linear infinite;
 }
 
 .about-text p {
@@ -1434,6 +1488,12 @@ button {
   .about-grid {
     grid-template-columns: 1fr;
     gap: 32px;
+    justify-items: center;
+  }
+
+  .about-text,
+  .about-side {
+    justify-self: stretch;
   }
 
   .testimony-card {
