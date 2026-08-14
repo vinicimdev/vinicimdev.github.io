@@ -1579,4 +1579,8 @@ button {
 
 #word {
   display: inline-block;
+img[src$="papercut-cover.png"] {
+  object-fit: contain;
+  background: var(--bg-2);
+}
 }
