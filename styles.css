@@ -1579,8 +1579,23 @@ button {
 
 #word {
   display: inline-block;
+}
+
+#word::after {
+  content: "|";
+  display: inline-block;
+  margin-left: 0.05em;
+  color: var(--text-0);
+  font-weight: 400;
+  animation: cursor-blink 1s steps(2, start) infinite;
+}
+
+@keyframes cursor-blink {
+  to {
+    visibility: hidden;
+  }
+}
 img[src$="papercut-cover.png"] {
   object-fit: contain;
   background: var(--bg-2);
-}
 }
