@@ -33,7 +33,17 @@ git clone https://github.com/vinicimdev/vinicimdev.github.io.git
 cd vinicimdev.github.io
 ```
 
-Open `index.html` in any browser. No install step, no dependencies.
+This project uses ES modules, so it needs to be served over HTTP.
+Opening `index.html` directly won't work. Any local
+server does the job:
+
+**VS Code:** install the Live Server extension, then
+right-click `index.html` -> "Open with Live Server".
+
+**Python:** `python3 -m http.server 8000`, then open
+http://localhost:8000
+
+No build step, no dependencies.
 
 ## Credits
 
